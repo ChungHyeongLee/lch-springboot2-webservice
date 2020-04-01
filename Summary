@@ -1,0 +1,54 @@
+1.	Pre requiste Intelli J
+A.	WINDOW 에 JAVA 설치(java 8)
+https://prolite.tistory.com/975
+ 
+1)	시스템 변수 -> 새로만들기-> JAVA_HOME
+2)	Path -> 편집 1-아래처럼추가
+ 
+3)	시스템 변수 _> CLASSPATH 추가
+ 
+
+
+B.	gradle-wrapper.properties
+https://github.com/jojoldu/freelec-springboot2-webservice
+gradle 버전이 5인경우 4로 변경
+gradlew wrapper --gradle-version 4.10.2
+C.	git
+1)git 윈도우에 설치
+2)git.exe있는 파일 위치 등록해준다 
+[File]->settings -> path to Git executable ->
+ 
+ 
+ 
+2.	IntelliJ
+A.	설치
+toolbox 설치 -> 2.4로 설치 ->3버전은 실해이 안되요 
+2.4 관리자 권한으로 실행
+B.	프로젝트
+gradle 
+ 
+C.	git push
+1)	git push
+A)
+[Ctrl+Shift+A] -> ‘share project on github’ 검색 -> github 계정으로 로그인
+->repository 생성->[share]
+B) commit 할 애들 
+.idea 제외 하고 모두 클릭
+
+C) githn으로 확인 
+2)	.ingnore 설치
+A) 
+[Ctrl+Shift+A] -> ‘plugins 검색 ->.ingnore 설치 
+B) 
+
+3) ㅁㄴㅇㄹ ignor파일 생성 
+프로젝트이름 우클릭 -> [.ignore file ]-> [gitignore fiile]->
+./grade
+.idea
+깉허브에 반영 
+ 
+3.	TDD(테스트 코드 
+A.	
+4.	ㄴㅇㄹ
+5.	asdfasd
+6.	
