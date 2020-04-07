@@ -1,5 +1,6 @@
 package com.lch.book.springboot.web;
 
+import com.lch.book.springboot.config.auth.LoginUser;
 import com.lch.book.springboot.config.auth.dto.SessionUser;
 import com.lch.book.springboot.domain.posts.PostsRepository;
 import com.lch.book.springboot.service.posts.PostsService;
@@ -16,23 +17,18 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class IndexController {
+
     private final PostsService postsService;
-    private final HttpSession httpSession;
+
     @GetMapping("/")
-    /*public String index() {
-        return "index";
-    }*/
-
-    public String index(Model model){
-
-        model.addAttribute("posts",postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
-        if(user != null){
-            model.addAttribute("userName",user.getName());
+    public String index(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
         }
-
         return "index";
     }
+
     @GetMapping("/posts/save")
     public String postsSave() {
         return "posts-save";
