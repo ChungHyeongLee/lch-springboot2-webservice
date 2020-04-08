@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ec2-user/app/step1
+REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=lch-springboot2-webservice
 cd $REPOSITORY/$PROJECT_NAME/
 
