@@ -37,3 +37,28 @@ do
   echo "> Health check 연결 실패. 재시도..."
   sleep 10
 done
+
+#!/bin/bash
+
+# Backup directory
+BACKUP_DIR="/path/to/backup"
+
+# Source directory to backup
+SOURCE_DIR="/path/to/source"
+
+# Create backup directory if it does not exist
+if [ ! -d "$BACKUP_DIR" ]; then
+  mkdir -p "$BACKUP_DIR"
+fi
+
+# Get current date and time
+DATE=$(date +"%Y%m%d%H%M%S")
+
+# Create a backup file name with date
+BACKUP_FILE="$BACKUP_DIR/backup_$DATE.tar.gz"
+
+# Create a tar.gz archive of the source directory
+tar -czvf "$BACKUP_FILE" -C "$SOURCE_DIR" .
+
+# Print message
+echo "Backup of $SOURCE_DIR completed successfully. Backup file: $BACKUP_FILE"
